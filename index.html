@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="./Style.css">
+</head>
+    <body>
+    
+        <div class="main">
+            <div class="form-box">
+                <div class="row"></div>
+                <div class="form-content">
+                    
+                    <form onsubmit="return false">
+    
+                        <div id="header">
+                            <h1>Ajouter un nouveau article</h1>
+                        </div>
+    
+                        <div class="personal-info">
+    
+                            <div class="input">
+                                <h2>Nom du article :</h2>
+                                <input type="text" id="Article" placeholder="article">
+                            </div>
+    
+                            <div class="input">
+                                <h2>ça marque :</h2>
+                                <input type="text" id="Marque" placeholder="Marque" max="30">
+                            </div>
+                            <div class="input">
+                                <h2>Prix :</h2>
+                                <input type="text" id="prix" placeholder="Prix" max="30">
+                            </div>
+    
+                            <div class="input">
+                                <h2>Date de production :</h2>
+                                <input type="date" id="date" placeholder="Date">
+                            </div>
+    
+                            <div class="input">
+                                <h2>Type :</h2>
+                                <select name="type" id="TYpe">
+                                <option value="Hygiène et toilette">Hygiène et toilette</option>
+                                <option value="Soins esthétiques">Soins esthétiques</option>
+                                <option value="Produits solaires">Produits solaires</option>
+                                <option value="Beauté des mains et des pieds">Beauté des mains et des pieds</option>
+                                <option value="Produits de maquillage">Produits de maquillage</option>
+                                <option value="Entretien capillaires">Entretien capillaires</option>
+                                <option value="Parfums">Parfums</option>
+                                </select>
+                                
+                            </div>
+                            <div id="promotion">
+                                <h2>promotion:</h2><br>
+                                <label for="OUI">Oui</label>
+                                <input name="promo" type="radio" id="oui" value="oui" >
+                                <label for="NON">Non</i></label>
+                                <input name="promo" type="radio" id="non" value="non">
+                            </div>
+    
+                        </div>
+                        <div>
+                            <button id="ajouter">Ajouter</button>
+                        </div>
+                        
+                            <div class="tab">
+                                <table id="table" >
+                                    <tr>
+                                        <th>Nom du article:</th>
+                                        <th>ça marque:</th>
+                                        <th>prix</th>
+                                        <th>Date de production :</th>
+                                        <th>type</th>
+                                        <th>promotion:</th>
+                                        <th>Option</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </table>
+                            </div>
+                    </form>
+                </div>
+            </div>
+          <script src="./program.js"></script>
+    </body>
+
+
+</html>

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap');
+
+
+body{
+	background-color: bisque;
+	
+}
+.main{
+	position: relative;
+}
+#header{
+	width: 100%;
+	height: auto;
+	background-color: rgb(75, 36, 36);
+}
+.form-box {
+	position:static;
+	width: 50%;
+	left: 15%;
+	top: 5vh;
+	margin: auto;
+	display: flex;
+	
+}
+
+.row{
+	width: 5%;
+	display: flex;
+	justify-content: flex-start;
+	align-content: flex-start;
+    border-end-start-radius: 10%;
+}
+
+.form-content {
+	width: 95%;
+	height: 100%;
+	padding: 50px 0;
+	background: #6e2837; 
+	display: flex;
+}
+form {
+	width: 80%;
+	height: 90%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	gap: 25px;
+}
+form h1{
+	text-align: center;
+	color: #6b3413;
+	font-size: 70px;
+	font-weight: 400;
+}
+
+.personal-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+
+}
+.personal-info input {
+	width: 100%;
+	padding: 15px 10px;
+	background: none;
+	
+	border-bottom: 1px solid #D4D3DC;
+	color: #D4D3DC;
+	font-size: 16px;
+}
+.personal-info .input{
+	width: 100%;
+}
+.personal-info span {
+	font-size: 16px;
+	margin: 25px 0;
+}
+
+.personal-info input::placeholder {
+	color: rgb(71, 22, 22);
+}
+.club-info {
+	display: flex;
+
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.club-info input {
+	padding: 15px 10px;
+	background: none;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #D4D3DC;
+	color: white;
+	font-size: 16px;
+}
+
+.club-info label {
+	color: white;
+	font-size: 12px;
+}
+.club-info label i{
+	color: white;
+	font-size: 24px;
+}
+.form-content button {
+	width: 100%;
+	padding: 15px 10px;
+	font-size: 20px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	color: black;
+	background: #D4D3DC;
+}
+.form-content button:hover {
+	color: white;
+}
+h2{
+	color: rgb(12, 7, 7);
+	font-weight: 300;
+}
+#promotion{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: flex-end;
+	gap: 10px;
+}
+.TYpe{
+	display: grid;
+	gap: 10px;
+}
+.tab {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #bb5858;
+}
+.tab{
+    display: grid;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: flex-end;
+	gap: 10px;
+}
+#bt{
+	display: grid;
+	
+}
+.newLine{
+	background-color: red;
+	width: 200px;
+	border: solid white 3px;
+	color: #dddddd;
+	
+	z-index: 1000;
+}
