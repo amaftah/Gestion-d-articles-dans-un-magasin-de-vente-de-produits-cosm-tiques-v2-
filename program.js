@@ -1,34 +1,65 @@
-var table = document.querySelector('table');
-var Nom = document.getElementById('Article');
-var Marque = document.getElementById('Marque');
-var Prix = document.getElementById('prix');
-var Type = document.getElementById('TYpe');
-var date = document.getElementById('date');
-var noPromo = document.getElementById('non');
-var Promo = document.getElementById('oui');
-var addButton = document.getElementById('ajouter');
-var ModiButton = document.getElementById('modifier');
+let article = document.getElementById('Article');
+let marque = document.getElementById('Marque');
+let prix = document.getElementById('prix');
+let date = document.getElementById('date');
+let type = document.getElementById('TYpe');
+let oui = document.getElementById('oui');
+let non = document.getElementById('non');
+let submite = document.getElementById('ajouter');
 
-class Article {
-    constructor(_Nom, _Marque,_Prix,_date, _Type,promotion) {
-      this.Nom = _Nom;   
-      this.Marque = _Marque;
-      this.Prix = _Prix;
-      this.date = _date;
-      this.Type = _Type;
-      this.promotion = promotionCheck();
-    }
-    
-    promotionCheck() {
-        var getSelectedValue = document.querySelector( 'input[name="promotion"]:checked');
-        getSelectedValue = getSelectedValue.value;
-        return getSelectedValue;
-    }
-  }
-  
-  function Ajouter(){
-    let Produit = new Article (Nom.value, Marque.value, Prix.value, date.value, Type.value);
-    consol.log(Produit.promotionCheck());
-
-
+let SavedData;
+ if (localStorage.product != null){
+    SavedData = JSON.parse(localStorage.product)
+ }else{
+  SavedData = [];
 }
+
+submite.onclick = function(){
+  console.log('im here')
+  tbody.innerHTML ='';
+  let newtb = {
+    article:article.value,
+    marque:marque.value,
+    prix:prix.value,
+    date:date.value,
+    type:type.value,
+    oui:oui.value,
+    non:non.value,
+  }
+  SavedData.push(newtb);
+  localStorage.setItem('product', JSON.stringify(SavedData));
+  console.log(newtb);
+  ClearData()
+  ShowData()
+}
+
+function ClearData(){
+  article.value = '';
+  marque.value = '';
+  prix.value = '';
+  date.value = '';
+  type.value = '';
+  oui.value = '';
+  non.value = '';
+}
+
+function ShowData(){
+  let tbody = document.getElementById('tbody')
+
+  for (let i = 0; i < SavedData.length; i++){
+    tbody.innerHTML +=`
+    <tr>
+      <td>${i}</td>
+      <td>${SavedData[i].article}</td>
+      <td>${SavedData[i].marque}</td>
+      <td>${SavedData[i].prix}</td>
+      <td>${SavedData[i].date}</td>
+      <td>${SavedData[i].type}</td>
+      <td>${SavedData[i].oui},${SavedData[i].non}</td>
+      <td><button id = "Delete">delete</button></td>
+      <td><button id = "Update">update</button></td>
+    `
+  }
+  // document.getElementById('tbody').innerHTMl = table;
+}
+ShowData()
