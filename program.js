@@ -71,4 +71,4 @@ function DeleteData(i){
   SavedData.splice(i,1);
   localStorage.product = JSON.stringify(SavedData);
   ShowData()
-}l
+}
