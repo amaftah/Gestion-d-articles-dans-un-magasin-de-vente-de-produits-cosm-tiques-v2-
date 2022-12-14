@@ -15,7 +15,7 @@ let SavedData;
 }
 
 submite.onclick = function(){
-  console.log('im here')
+  
   tbody.innerHTML ='';
   let newtb = {
     article:article.value,
@@ -28,7 +28,6 @@ submite.onclick = function(){
   }
   SavedData.push(newtb);
   localStorage.setItem('product', JSON.stringify(SavedData));
-  console.log(newtb);
   ClearData()
   ShowData()
 }
@@ -56,10 +55,18 @@ function ShowData(){
       <td>${SavedData[i].date}</td>
       <td>${SavedData[i].type}</td>
       <td>${SavedData[i].oui},${SavedData[i].non}</td>
-      <td><button id = "Delete">delete</button></td>
-      <td><button id = "Update">update</button></td>
+      <td><button onclick = "DeleteData(${i})" id = "Delete">delete</button></td>
+      <td><button onclick = "UpdateData()" id = "Update">update</button></td>
     `
   }
   // document.getElementById('tbody').innerHTMl = table;
+  ShowData()
 }
-ShowData()
+
+
+
+function DeleteData(i){
+  SavedData.splice(i,1);
+  localStorage.product = JSON.stringify(SavedData);
+  
+}ShowData()
