@@ -18,7 +18,7 @@ submite.onclick = function(){
   
   tbody.innerHTML ='';
   let newtb = {
-    article:article.value,
+    nom:article.value,
     marque:marque.value,
     prix:prix.value,
     date:date.value,
@@ -56,7 +56,8 @@ function ShowData(){
       <td>${SavedData[i].type}</td>
       <td>${SavedData[i].oui},${SavedData[i].non}</td>
       <td><button onclick = "DeleteData(${i})" id = "Delete">delete</button></td>
-      <td><button onclick = "UpdateData()" id = "Update">update</button></td>
+      <td><button onclick = "UpdateData(${i})" id = "Update">update</button></td>
+    
     `
   }
   // document.getElementById('tbody').innerHTMl = table;
@@ -65,8 +66,9 @@ function ShowData(){
 
 
 
+
 function DeleteData(i){
   SavedData.splice(i,1);
   localStorage.product = JSON.stringify(SavedData);
-  
-}ShowData()
+  ShowData()
+}l
